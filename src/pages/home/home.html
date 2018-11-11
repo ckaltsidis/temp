@@ -1,14 +1,30 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+<ion-header no-border>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ΨΥΓΕΙΑ v0.0.3</ion-title>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+
+    <img src="assets/imgs/logo_gi.png"/>
+
+<ion-list>
+
+  <button ion-item *ngFor="let refrigerator of data" (click)="onLoadRefrig(refrigerator)">
+      
+      <h3>{{ refrigerator.name }}</h3>
+      <p>{{ refrigerator.description }}</p>
+      <ion-note item-end>
+        {{ refrigerator.temp_value }}<sup>o</sup>C
+        </ion-note>
+      
+    </button>  
+
+</ion-list>
+
 </ion-content>
