@@ -11,27 +11,11 @@ import { DetailPage } from '../../pages/detail/detail';
 
 export class HomePage {  
   data:object;
-  baseUrl:string = 'https://orfiki.mycoach.gr/mobile/';
   constructor(public navCtrl: NavController, public navParams: NavParams, public mydata: MydataProvider) {
    
     this.mydata.psygeia().subscribe(data => {
       this.data = data;
-      console.log('Data:');
-      console.log(data);
-      console.log('post load 1');
   });
-
-//this.data = this.http.get(this.baseUrl+'refrigerators').map(res => res);
-//  this.http.get(this.baseUrl+'refrigerators')
-//     .subscribe(
-//     data => {
-//       console.log('Data');
-//       //this.data = data as any[];   // FILL THE ARRAY WITH DATA.
-//       this.data = data;
-//     },
-//     error => {
-//         console.log(error);
-//     } );  
     
  }
 
